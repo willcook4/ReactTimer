@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate",
+  "name": "Timer Application",
   "version": "1.0.0",
-  "description": "Simple React App",
+  "description": "Simple React Timer App",
   "main": "index.js",
   "engines": {
     "node": "6.9.4"
