@@ -1,5 +1,5 @@
 {
-  "name": "Timer Application",
+  "name": "timerapplication",
   "version": "1.0.0",
   "description": "Simple React Timer App",
   "main": "index.js",
@@ -10,13 +10,17 @@
     "test": "karma start",
     "start": "node server.js"
   },
-  "author": "Will Cook",
+  "author": "Will Cook <hello@doubleucook.com> (http://doubleucook.com/)",
   "license": "MIT",
   "dependencies": {
     "express": "^4.14.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0"
+  },
+  "repository" :
+  { "type" : "git",
+    "url" : "https://github.com/willcook4/ReactTimer.git"
   },
   "devDependencies": {
     "babel-core": "^6.5.1",

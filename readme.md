@@ -1,17 +1,17 @@
 #React Timer App
-Simple, clean timer and countdown application. Built with React and tested with Karma. 
+Simple, clean timer and countdown application. Built with React and tested with Karma.
 
 
-See the final result live [here](https://frozen-gorge-68535.herokuapp.com/). 
+See the final result live [here](https://frozen-gorge-68535.herokuapp.com/).
 
 Built using:
 -
-* React
-* Webpack
-* Babel
-* JavaScript ES6
-* Karma
-* Mocha
-* Foundation 
+* React -JavaScript Framework
+* Webpack - Compiling code
+* Babel - ES6 to ES5 for browser compatibility
+* JavaScript ES6 - Latest JavaScript
+* Karma - Testing environment
+* Mocha - Testing Framework
+* Foundation - Front-end Framework
 
 
