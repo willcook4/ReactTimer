@@ -14,4 +14,5 @@ Built using:
 * Mocha - Testing Framework
 * Foundation - Front-end Framework
 
-
+Run the tests with
+```npm test```
