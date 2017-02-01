@@ -40,7 +40,7 @@ var Countdown = React.createClass({
   componentWillUnmount: function () {
     // This will fire when the component is unmounted/removed from the page
     // console.log('componentDidUnmount');
-    // Clearing the timer
+    // Clearing the timer!
     clearInterval(this.timer);
     this.timer = undefined;
   },
