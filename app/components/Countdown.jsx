@@ -25,12 +25,34 @@ var Countdown = React.createClass({
       }
     }
   },
+  // componentWillUpdate: function(nextProps, nextState) {
+  //   // Gets fired before the update
+  //
+  // },
+  // componentDidMount: function () {
+  //   //Will fire after it is rendered in the DOM
+  //   console.log('componentDidMount');
+  // },
+  // componentWillMount: function () {
+  //   // This will fire when the component is first mounted/added to the page
+  //   console.log('componentWillMount')
+  // },
+  componentWillUnmount: function () {
+    // This will fire when the component is unmounted/removed from the page
+    // console.log('componentDidUnmount');
+    // Clearing the timer
+    clearInterval(this.timer);
+    this.timer = undefined;
+  },
   startTimer: function () {
     this.timer = setInterval(() => {
       var newCount = this.state.count - 1;
       this.setState({
         count: newCount >= 0 ? newCount : 0
       });
+      if(newCount === 0) {
+        this.setState({countdownStatus: 'stopped'});
+      }
     }, 1000);
   },
   handleSetCountdown: function(seconds){
