@@ -41,4 +41,21 @@ describe('Timer', () => {
       done();
     }, 1001);
   });
+
+  it('should clear count on stopped status', (done) => {
+    var timer = TestUtils.renderIntoDocument(<Timer/>);
+    //Give a count to start with
+    timer.setState({count: 10});
+    // Make sure the test starts
+    timer.handleStatusChange('started');
+    // Make the test pause
+    timer.handleStatusChange('stopped');
+
+    setTimeout(() => {
+      /* Timer state should not have changed and count stayed the same */
+      expect(timer.state.timerStatus).toBe('stopped');
+      expect(timer.state.count).toBe(0);
+      done();
+    }, 1001);
+  });
 });
