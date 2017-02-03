@@ -78,7 +78,7 @@ var Countdown = React.createClass({
   },
   renderTitle: function () {
     return (
-      <p>{this.state.title}</p>
+      <p className="text-center">{this.state.title}</p>
     )
   },
   render: function () {
