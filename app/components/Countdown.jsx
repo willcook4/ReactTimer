@@ -9,7 +9,8 @@ var Countdown = React.createClass({
   getInitialState: function () {
     return {
       count: 0,
-      countdownStatus: 'stopped'
+      countdownStatus: 'stopped',
+      title: ''
     };
   },
   componentDidUpdate: function(prevProps, prevState){
@@ -60,17 +61,25 @@ var Countdown = React.createClass({
   handleSetCountdown: function(seconds){
     this.setState({
       count: seconds,
-      countdownStatus: 'started'
+      countdownStatus: 'started',
+      title: 'Custom Countdown'
     });
   },
-  handlePresetCountdown: function(seconds){
+  handlePresetCountdown: function(index){
+    console.log('handlePresetCountdown: ', Presets[index]);
     this.setState({
-      count: seconds,
-      countdownStatus: 'started'
+      count: Presets[index].time,
+      countdownStatus: 'started',
+      title: Presets[index].name
     });
   },
   handleStatusChange: function (newStatus) {
     this.setState({countdownStatus: newStatus});
+  },
+  renderTitle: function () {
+    return (
+      <p>{this.state.title}</p>
+    )
   },
   render: function () {
     var {count, countdownStatus} = this.state;
@@ -80,6 +89,7 @@ var Countdown = React.createClass({
         return (
           <div>
             <Controls countdownStatus={countdownStatus} onStatusChange={this.handleStatusChange}/>
+
           </div>
         )} else {
         return (
@@ -93,6 +103,7 @@ var Countdown = React.createClass({
     return (
       <div>
         <h1 className="page-title">Countdown App</h1>
+        {this.renderTitle()}
         <Clock totalSeconds={count}/>
         {renderControlArea()}
       </div>
