@@ -16,13 +16,15 @@ var CountdownDropdown = React.createClass({
   // Add item to props if selected
   formSubmit: function(e) {
     e.preventDefault();
+    //This form never submits
+
     // console.log('event', this.refs.itemSelected.value);
     // console.log('item selected: ', item.time);
     // this.props.selected(item.time);
   },
   handleChange(e) {
     console.log('Selected: ', e.target.value);
-    // Pass the prop of the index of the Preset selected. 
+    // Pass the prop of the index of the Preset selected.
     this.props.selected(e.target.value);
   },
   render: function(){

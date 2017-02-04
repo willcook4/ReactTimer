@@ -17,5 +17,6 @@ app.use(express.static('public'));
 
 // Port and listen
 app.listen(PORT, function() {
-  console.log('Express server is up on port: ' + PORT);
+  // console.log('Express server is up on port: ' + PORT);
+  console.log(`Express server is up on {PORT}`)
 });
