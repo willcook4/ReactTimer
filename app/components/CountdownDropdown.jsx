@@ -9,7 +9,7 @@ var CountdownDropdown = React.createClass({
       return (
         <select onChange={this.handleChange} className="dropdown">
           {itemsArray.map((item, index) => {
-          return <option key={index.toString()} value={index}>{item.name}</option>
+            return <option key={index.toString()} value={index}>{item.name}</option>
         })}
         </select>
   )},
