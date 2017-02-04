@@ -20,7 +20,7 @@ var Countdown = React.createClass({
           this.startTimer();
           break;
         case 'stopped':
-          this.setState({count: 0});
+          this.setState({count: 0, title: ""});
         case 'paused':
           clearInterval(this.timer);
           this.timer = undefined;
@@ -66,7 +66,7 @@ var Countdown = React.createClass({
     });
   },
   handlePresetCountdown: function(index){
-    console.log('handlePresetCountdown: ', Presets[index]);
+    // console.log('handlePresetCountdown: ', Presets[index]);
     this.setState({
       count: Presets[index].time,
       countdownStatus: 'started',
