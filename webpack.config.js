@@ -3,8 +3,8 @@ var path = require('path');
 
 module.exports = {
   entry: [
-    'script!jquery/dist/jquery.min.js',
-    'script!foundation-sites/dist/js/foundation.min.js',
+    'script-loader!jquery/dist/jquery.min.js',
+    'script-loader!foundation-sites/dist/js/foundation.min.js',
     './app/app.jsx'],
   externals: {
     jquery: 'jQuery'
@@ -20,37 +20,43 @@ module.exports = {
     filename: './public/bundle.js'
   },
   resolve: {
-    root: __dirname,
+    modules: [
+      path.resolve(__dirname, './app/components'),
+      path.resolve(__dirname, './app/api'),
+      'node_modules'
+    ],
     alias: {
-      Main: 'app/components/Main.jsx',
-      Nav: 'app/components/Nav.jsx',
-      Countdown: 'app/components/Countdown.jsx',
-      Timer: 'app/components/Timer.jsx',
-      Clock: 'app/components/Clock.jsx',
-      CountdownForm: 'app/components/CountdownForm.jsx',
-      Controls: 'app/components/Controls.jsx',
-      CountdownDropdown: 'app/components/CountdownDropdown.jsx',
-      Presets: 'app/components/Presets.jsx',
-      applicationStyles: 'app/styles/app.scss'
+      applicationStyles: path.resolve(__dirname, './app/styles/app.scss')
     },
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   module: {
-    loaders: [
+    rules: [
       {
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015', 'stage-0']
-        },
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/
-      }
-    ]
-  },
-  sassLoader: {
-    includePaths: [
-      path.resolve(__dirname, './node_modules/foundation-sites/scss')
-    ]
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['react', 'es2015', 'stage-0']
+            }
+          }
+        ]
+      },{
+        test: /\.scss?$/,
+        use: [
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [
+                path.resolve(__dirname, './node_modules/foundation-sites/scss'),
+                path.resolve(__dirname, './app/styles/')
+              ]
+            }
+          }
+        ]
+      }]
   },
   devtool: 'eval-source-map'
 };

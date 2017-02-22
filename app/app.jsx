@@ -11,7 +11,7 @@ var Countdown = require('Countdown');
 $(document).foundation();
 
 // Load CSS
-require('style!css!sass!applicationStyles');
+require('style-loader!css-loader!sass-loader!applicationStyles');
 
 ReactDOM.render(
   <Router history={hashHistory}>
