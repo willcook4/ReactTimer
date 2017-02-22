@@ -8,7 +8,7 @@ var CountdownForm = React.createClass({
     // console.log('input count', $('input').length);
 
     if(strSeconds.match(/^[0-9]*$/)) {
-      this.refs.seconds.value = "";
+      this.refs.seconds.value = '';
       this.props.onSetCountdown(parseInt(strSeconds, 10));
     }
   },
@@ -20,8 +20,8 @@ var CountdownForm = React.createClass({
           <button className="button expanded">Start</button>
         </form>
       </div>
-    )
+    );
   }
 });
 
-module.exports = CountdownForm; 
+module.exports = CountdownForm;

@@ -66,7 +66,8 @@ var Timer = React.createClass({
         <Clock totalSeconds={count}/>
         <Controls countdownStatus={timerStatus} onStatusChange={this.handleStatusChange}/>
       </div>
-  )},
+    );
+  }
 });
 
 module.exports = Timer;

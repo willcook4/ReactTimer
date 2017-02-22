@@ -20,7 +20,7 @@ var Countdown = React.createClass({
           this.startTimer();
           break;
         case 'stopped':
-          this.setState({count: 0, title: ""});
+          this.setState({count: 0, title: ''});
         case 'paused':
           clearInterval(this.timer);
           this.timer = undefined;
@@ -79,7 +79,7 @@ var Countdown = React.createClass({
   renderTitle: function () {
     return (
       <p className="text-center">{this.state.title}</p>
-    )
+    );
   },
   render: function () {
     var {count, countdownStatus} = this.state;
@@ -91,13 +91,15 @@ var Countdown = React.createClass({
             <Controls countdownStatus={countdownStatus} onStatusChange={this.handleStatusChange}/>
 
           </div>
-        )} else {
+        );
+      } else {
         return (
           <div>
             <CountdownForm onSetCountdown={this.handleSetCountdown}/>
             <CountdownDropdown list={Presets} selected={this.handlePresetCountdown}/>
           </div>
-        )};
+        );
+      }
     };
 
     return (
@@ -107,7 +109,8 @@ var Countdown = React.createClass({
         <Clock totalSeconds={count}/>
         {renderControlArea()}
       </div>
-  )},
+    );
+  }
 });
 
 module.exports = Countdown;

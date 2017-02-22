@@ -1,4 +1,5 @@
-var React = require('react');
+/* global describe, it */ //esLint config for this file
+var React = require('react'); // Used for renderIntoDocument
 var ReactDOM = require('react-dom');
 var expect = require('expect');
 var $ = require('jQuery');
@@ -13,7 +14,7 @@ describe('Controls', () => {
 
   describe('render', () => {
     it('should render pause when started', () => {
-      var controls = TestUtils.renderIntoDocument(<Controls countdownStatus='started'/>);
+      var controls = TestUtils.renderIntoDocument(<Controls countdownStatus='started' onStatusChange={()=>{}}/>); // Placeholder onStatusChange function
       var $el = $(ReactDOM.findDOMNode(controls));
       var $pauseButton = $el.find('button:contains(Pause)');
 
@@ -21,7 +22,7 @@ describe('Controls', () => {
     });
 
     it('should render start when paused', () => {
-      var controls = TestUtils.renderIntoDocument(<Controls countdownStatus="paused"/>);
+      var controls = TestUtils.renderIntoDocument(<Controls countdownStatus='paused' onStatusChange={()=>{}}/>); // Placeholder onStatusChange function
       var $el = $(ReactDOM.findDOMNode(controls));
       var $pauseButton = $el.find('button:contains(Start)');
 

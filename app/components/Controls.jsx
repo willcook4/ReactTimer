@@ -8,7 +8,7 @@ var Controls = React.createClass({
   onStatusChange: function (newStatus) {
     return () => {
       this.props.onStatusChange(newStatus);
-    }
+    };
   },
   // componentWillReceiveProps(newProps) {
   //   // Gets passed the next props. Will fire ?
@@ -19,9 +19,9 @@ var Controls = React.createClass({
 
     var renderStartStopButton = () => {
       if (countdownStatus === 'started') {
-        return <button className="button secondary" onClick={this.onStatusChange('paused')}>Pause</button>
+        return <button className="button secondary" onClick={this.onStatusChange('paused')}>Pause</button>;
       } else {
-        return <button className="button primary" onClick={this.onStatusChange('started')}>Start</button>
+        return <button className="button primary" onClick={this.onStatusChange('started')}>Start</button>;
       }
     };
 
@@ -30,7 +30,7 @@ var Controls = React.createClass({
         {renderStartStopButton()}
         <button className="button alert hollow" onClick={this.onStatusChange('stopped')}>Clear</button>
       </div>
-    )
+    );
   }
 });
 
