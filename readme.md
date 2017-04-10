@@ -1,4 +1,5 @@
-#React Timer App
+# React Timer App
+
 Simple, clean timer and countdown application. Built with React and tested with Karma.
 
 ![Timer Application Screenshot](./timer.gif)
